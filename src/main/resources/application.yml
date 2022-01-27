@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092, localhost:9093
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        acks: 1
+        spring:
+          json:
+            add:
+              type:
+                headers: false
+        retries: 3
+---
+
+spring:
+  profiles: prod
+  kafka:
+    producer:
+      bootstrap-servers: prod_URL:9092, prod_URL:9093
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
