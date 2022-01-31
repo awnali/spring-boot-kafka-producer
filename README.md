@@ -69,3 +69,9 @@ curl --location --request POST 'http://localhost:8081/message/send' \
 --header 'Content-Type: application/json' \
 --data-raw '{"id":706,"name":"Randall Schimmel","address":"Suite 541 699 Abshire Drive, South John, OH 14686","phone":"575-004-3925","active":true}'
 ```
+
+Here's the link for kafka consumer:
+https://github.com/awnali/spring-boot-kafka-consumer
+
+How to install Kafka:
+https://gist.github.com/awnali/02113a0b164e8c096e906c3d226d4749
